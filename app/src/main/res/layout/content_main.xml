@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="YEARS, HOURS, DAYS, MINUTES, SECONDS"
+        android:text="YEARS, MONTHS AND DAYS"
         android:textColor="#FF5722"
         android:layout_marginTop="20dp"
         android:textSize="25sp"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FF5722"
         android:layout_marginTop="20sp"
-        android:textSize="20sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,36 +72,21 @@
         android:layout_height="wrap_content"
         android:textColor="#FF5722"
         android:layout_marginTop="20sp"
-        android:textSize="20sp" />
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/tvSelectedDateInMonths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF5722"
+        android:layout_marginTop="20sp"
+        android:textSize="30sp" />
     <TextView
         android:id="@+id/tvSelectedDateInDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FF5722"
         android:layout_marginTop="20sp"
-        android:textSize="20sp" />
-    <TextView
-        android:id="@+id/tvSelectedDateInHours"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FF5722"
-        android:layout_marginTop="20sp"
-        android:textSize="20sp" />
-    <TextView
-        android:id="@+id/tvSelectedDateInMinutes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FF5722"
-        android:layout_marginTop="20sp"
-        android:textSize="20sp" />
-    <TextView
-        android:id="@+id/tvSelectedDateInSeconds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FF5722"
-        android:layout_marginTop="20sp"
-        android:textSize="20sp" />
-
+        android:textSize="30sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
