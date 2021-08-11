@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("PRINT STATEMENTS", "IF -> IF")
 
                         numberOfMonths = currMonth-selMonth
-                        numberofDays = currDate - selDate
+                        numberofDays = currDate - selDate 
                     }
                     else if(selDate>currDate){
 
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                         numberOfMonths = currMonth - selMonth - 1
                         Log.d("PRINT STATEMENTS", " current month = $currMonth, selected month = $selMonth, numberofmonths = $numberOfMonths")
                         var remainingDay = remainingDays(selMonth, currYear)
-                        numberofDays= remainingDays(selMonth, selYear) - selDate + currDate + 1
+                        numberofDays= remainingDays(selMonth, selYear) - selDate + currDate
                         Log.d("PRINT STATEMENTS", "$remainingDay, $numberofDays")
                     }
                     else if(selDate==currDate){
@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("PRINT STATEMENTS", "ELSE IF 1 -> ELSE IF 1")
 
                         numberOfMonths = (12-selMonth) + currMonth - 1
-                        numberofDays = remainingDays(selMonth, selYear) - selDate + currDate + 1
+                        numberofDays = remainingDays(selMonth, selYear) - selDate + currDate
                     }
                     else if(selDate==currDate){
 
@@ -144,7 +144,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("PRINT STATEMENTS", "ELSE IF 2 -> ELSE IF 1")
 
                         numberOfMonths =11
-                        numberofDays = remainingDays(selMonth, selYear) - selDate + currDate + 1
+                        numberofDays = remainingDays(selMonth, selYear) - selDate + currDate
                     }
                     else if(selDate==currDate){
 
