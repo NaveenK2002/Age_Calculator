@@ -70,83 +70,78 @@ class MainActivity : AppCompatActivity() {
                 var numberofDays: Int = 0
                 var numberofYears: Int = 0
 
-                if(selMonth<currMonth){
+                if (selMonth < currMonth) {
 
                     Log.d("PRINT STATEMENTS", "Inside first IF condition")
 
                     numberofYears = currYear - selYear
-                    if(selDate<currDate){
+                    if (selDate < currDate) {
 
                         Log.d("PRINT STATEMENTS", "IF -> IF")
 
-                        numberOfMonths = currMonth-selMonth
-                        numberofDays = currDate - selDate 
-                    }
-                    else if(selDate>currDate){
+                        numberOfMonths = currMonth - selMonth
+                        numberofDays = currDate - selDate
+                    } else if (selDate > currDate) {
 
                         Log.d("PRINT STATEMENTS", "IF -> ELSE IF 1")
 
                         numberOfMonths = currMonth - selMonth - 1
-                        Log.d("PRINT STATEMENTS", " current month = $currMonth, selected month = $selMonth, numberofmonths = $numberOfMonths")
+                        Log.d(
+                            "PRINT STATEMENTS",
+                            " current month = $currMonth, selected month = $selMonth, numberofmonths = $numberOfMonths"
+                        )
                         var remainingDay = remainingDays(selMonth, currYear)
-                        numberofDays= remainingDays(selMonth, selYear) - selDate + currDate
+                        numberofDays = remainingDays(selMonth, selYear) - selDate + currDate
                         Log.d("PRINT STATEMENTS", "$remainingDay, $numberofDays")
-                    }
-                    else if(selDate==currDate){
+                    } else if (selDate == currDate) {
 
                         Log.d("PRINT STATEMENTS", "IF -> ELSE IF 2")
 
                         numberOfMonths = currMonth - selMonth
                         numberofDays = 0
                     }
-                }
-                else if(selMonth>currMonth){
+                } else if (selMonth > currMonth) {
 
                     Log.d("PRINT STATEMENTS", "Inside first Else IF condition")
 
                     numberofYears = currYear - selYear - 1
-                    if(selDate<currDate){
+                    if (selDate < currDate) {
 
                         Log.d("PRINT STATEMENTS", "ELSE IF 1 -> IF")
 
-                        numberOfMonths = (12-selMonth) + currMonth
+                        numberOfMonths = (12 - selMonth) + currMonth
                         numberofDays = currDate - selDate
-                    }
-                    else if(selDate>currDate){
+                    } else if (selDate > currDate) {
 
                         Log.d("PRINT STATEMENTS", "ELSE IF 1 -> ELSE IF 1")
 
-                        numberOfMonths = (12-selMonth) + currMonth - 1
+                        numberOfMonths = (12 - selMonth) + currMonth - 1
                         numberofDays = remainingDays(selMonth, selYear) - selDate + currDate
-                    }
-                    else if(selDate==currDate){
+                    } else if (selDate == currDate) {
 
                         Log.d("PRINT STATEMENTS", "ELSE IF 1 -> ELSE IF 2")
 
-                        numberOfMonths = (12-selMonth) + currMonth
+                        numberOfMonths = (12 - selMonth) + currMonth
                         numberofDays = 0
                     }
-                }
-                else if(selMonth==currMonth){
+                } else if (selMonth == currMonth) {
 
                     Log.d("PRINT STATEMENTS", "Inside second Ese IF condition")
 
                     numberofYears = currYear - selYear
-                    if(selDate<currDate){
+                    if (selDate < currDate) {
 
                         Log.d("PRINT STATEMENTS", "ELSE IF 2 -> IF")
 
                         numberOfMonths = 12
                         numberofDays = currDate - selDate
-                    }
-                    else if(selDate>currDate){
+                    } else if (selDate > currDate) {
 
                         Log.d("PRINT STATEMENTS", "ELSE IF 2 -> ELSE IF 1")
 
-                        numberOfMonths =11
+                        numberOfMonths = 11
                         numberofDays = remainingDays(selMonth, selYear) - selDate + currDate
-                    }
-                    else if(selDate==currDate){
+                    } else if (selDate == currDate) {
 
                         Log.d("PRINT STATEMENTS", "ELSE IF 2 -> ELSE IF 2")
                         numberOfMonths = 0
@@ -154,8 +149,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                numberofYears = numberofYears + numberOfMonths/12
-                numberOfMonths = numberOfMonths%12
+                numberofYears = numberofYears + numberOfMonths / 12
+                numberOfMonths = numberOfMonths % 12
 
                 tvSelectedDateInYears.setText("$numberofYears year/s")
                 tvSelectedDateInMonths.setText("$numberOfMonths month/s")
@@ -171,8 +166,7 @@ class MainActivity : AppCompatActivity() {
         dpd.show()
     }
 
-    fun checkIfLeap (year: Int): Boolean
-    {
+    fun checkIfLeap(year: Int): Boolean {
         if (year % 400 == 0)
             return true;
 
@@ -185,15 +179,14 @@ class MainActivity : AppCompatActivity() {
         return false;
     }
 
-    fun remainingDays (month: Int, year: Int): Int
-    {
-        if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+    fun remainingDays(month: Int, year: Int): Int {
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
             return 31
-        else if(month == 4 || month == 6 || month == 9 || month == 11)
+        else if (month == 4 || month == 6 || month == 9 || month == 11)
             return 30
-        else if(month == 2 && checkIfLeap(year)== true)
+        else if (month == 2 && checkIfLeap(year) == true)
             return 29
-        else if(month == 2 && checkIfLeap(year)==false)
+        else if (month == 2 && checkIfLeap(year) == false)
             return 28
         else
             return 0;
